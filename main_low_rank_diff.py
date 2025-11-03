@@ -325,10 +325,13 @@ if __name__ == "__main__":
 
     sanity_check = True
     modeltype2path = {
-        "llama2-7b-chat-hf": "",
-        "llama2-13b-chat-hf": "",
-        "llama2-7b-hf": "",
-        "llama2-13b-hf": "",
+        "llama2-7b-chat-hf": "./models/llama2-7b-chat-hf",
+        "llama2-13b-chat-hf": "./models/llama2-13b-chat-hf",
+        "llama2-7b-hf": "./models/llama2-7b-hf",
+        "llama2-13b-hf": "./models/llama2-13b-hf",
+        "llama3.1-8b": "./models/llama3.1-8b",
+        "llama3.1-nemoguard-8b": "./models/llama3.1-nemoguard-8b",
+        "qwen2_5-7b": "./models/qwen2.5-7B",
     }
 
     def get_llm(model_name, cache_dir="llm_weights"):
@@ -340,7 +343,11 @@ if __name__ == "__main__":
             device_map="cuda",
         )
 
-        model.seqlen = model.config.max_position_embeddings
+        # Set sequence length, capping at 4096 for memory efficiency
+        # Models with very large context windows (like Qwen's 131k) can cause OOM
+        # Original seq length code:
+        # model.seqlen = model.config.max_position_embeddings
+        model.seqlen = min(model.config.max_position_embeddings, 4096)
         return model
 
     if args.model == "llama2-7b-chat-hf":
@@ -349,6 +356,9 @@ if __name__ == "__main__":
     elif args.model == "llama2-13b-chat-hf":
         tokenizer = AutoTokenizer.from_pretrained(modeltype2path["llama2-13b-chat-hf"])
         model = get_llm("llama2-13b-chat-hf")
+    elif args.model == "qwen2_5-7b":
+        tokenizer = AutoTokenizer.from_pretrained(modeltype2path["qwen2_5-7b"])
+        model = get_llm("qwen2_5-7b")
     else:
         raise NotImplementedError
 
@@ -418,16 +428,22 @@ if __name__ == "__main__":
                 # note: since vLLM only supports loading from the path, we need to save the pruned model first for faster evaluation. We can reuse this temp folder to save disk spaces
                 pruned_path = os.path.join("temp", f"_vllm_tmp")
                 model.save_pretrained(pruned_path)
+                
+                # VLLM will share GPU with the existing model, so use conservative memory allocation
+                print(f"Loading model with VLLM from {pruned_path} (model kept in memory)")
+                
                 vllm_model = LLM(
                     model=pruned_path,
                     tokenizer=modeltype2path[args.model],
                     dtype="bfloat16",
-                    swap_space=128,
+                    swap_space=4,  # Reduced from 128 to 4 GiB
+                    max_model_len=4096,  # Cap context length
+                    gpu_memory_utilization=0.70,  # Use 70% to leave room for the original model
                 )
                 if True:
-                    vllm_model.llm_engine.tokenizer.add_special_tokens(
-                        {"pad_token": "[PAD]"}
-                    )
+                    # VLLM 0.11.0: llm_engine.tokenizer → get_tokenizer()
+                    tokenizer_vllm = vllm_model.get_tokenizer()
+                    tokenizer_vllm.add_special_tokens({"pad_token": "[PAD]"})
                 for include_inst in [True, False]:
                     suffix = "inst_" if include_inst else "no_inst_"
                     print("********************************")
@@ -545,12 +561,19 @@ if __name__ == "__main__":
             sum_acc = 0
             with open(save_filepath, "a") as f:
                 for k, v in results["results"].items():
+                    # lm-eval 0.4.x uses 'acc,none' instead of 'acc'
+                    # Try both formats for compatibility
+                    acc_value = v.get('acc,none', v.get('acc', None))
+                    if acc_value is None:
+                        print(f"Warning: No 'acc' metric found for task {k}, skipping")
+                        continue
+                    
                     print(
-                        f"{args.rank_pos}_{args.rank_neg}\t{args.alpha}\t{k}\t{v['acc']:.4f}",
+                        f"{args.rank_pos}_{args.rank_neg}\t{args.alpha}\t{k}\t{acc_value:.4f}",
                         file=f,
                         flush=True,
                     )
-                    sum_acc += v["acc"]
+                    sum_acc += acc_value
                 print(
                     f"{args.rank_pos}_{args.rank_neg}\t{args.alpha}\taveraged\t{sum_acc/len(task_list):.4f}",
                     file=f,

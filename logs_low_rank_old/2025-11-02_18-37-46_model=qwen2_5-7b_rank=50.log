@@ -1,0 +1,9 @@
+INFO 11-02 18:37:48 [__init__.py:216] Automatically detected platform cuda.
+`torch_dtype` is deprecated! Use `dtype` instead!
+torch 2.8.0
+transformers 4.57.1
+accelerate 1.11.0
+# of gpus:  1
+Disentangle: True
+loading llm model qwen2_5-7b
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:00<00:00,  3.20it/s]Loading checkpoint shards:  50%|█████     | 2/4 [00:00<00:00,  3.24it/s]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:00<00:00,  3.25it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:01<00:00,  3.36it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:01<00:00,  3.31it/s]

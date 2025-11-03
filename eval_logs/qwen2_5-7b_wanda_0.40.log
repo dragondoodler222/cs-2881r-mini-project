@@ -1,0 +1,482 @@
+nohup: ignoring input
+INFO 11-02 21:09:15 [__init__.py:216] Automatically detected platform cuda.
+`torch_dtype` is deprecated! Use `dtype` instead!
+torch 2.8.0
+transformers 4.57.1
+accelerate 1.11.0
+# of gpus:  1
+Disentangle: True
+loading llm model qwen2_5-7b
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:00<00:00,  3.46it/s]Loading checkpoint shards:  50%|█████     | 2/4 [00:00<00:00,  3.49it/s]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:00<00:00,  3.50it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:01<00:00,  3.61it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:01<00:00,  3.56it/s]
+use device  cuda:0
+pruning starts
+loading calibration data align
+dataset loading complete
+prune every linear layer
+pruning layer 0 name self_attn.q_proj
+pruning layer 0 name self_attn.k_proj
+pruning layer 0 name self_attn.v_proj
+pruning layer 0 name self_attn.o_proj
+pruning layer 0 name mlp.gate_proj
+pruning layer 0 name mlp.up_proj
+pruning layer 0 name mlp.down_proj
+pruning layer 1 name self_attn.q_proj
+pruning layer 1 name self_attn.k_proj
+pruning layer 1 name self_attn.v_proj
+pruning layer 1 name self_attn.o_proj
+pruning layer 1 name mlp.gate_proj
+pruning layer 1 name mlp.up_proj
+pruning layer 1 name mlp.down_proj
+pruning layer 2 name self_attn.q_proj
+pruning layer 2 name self_attn.k_proj
+pruning layer 2 name self_attn.v_proj
+pruning layer 2 name self_attn.o_proj
+pruning layer 2 name mlp.gate_proj
+pruning layer 2 name mlp.up_proj
+pruning layer 2 name mlp.down_proj
+pruning layer 3 name self_attn.q_proj
+pruning layer 3 name self_attn.k_proj
+pruning layer 3 name self_attn.v_proj
+pruning layer 3 name self_attn.o_proj
+pruning layer 3 name mlp.gate_proj
+pruning layer 3 name mlp.up_proj
+pruning layer 3 name mlp.down_proj
+pruning layer 4 name self_attn.q_proj
+pruning layer 4 name self_attn.k_proj
+pruning layer 4 name self_attn.v_proj
+pruning layer 4 name self_attn.o_proj
+pruning layer 4 name mlp.gate_proj
+pruning layer 4 name mlp.up_proj
+pruning layer 4 name mlp.down_proj
+pruning layer 5 name self_attn.q_proj
+pruning layer 5 name self_attn.k_proj
+pruning layer 5 name self_attn.v_proj
+pruning layer 5 name self_attn.o_proj
+pruning layer 5 name mlp.gate_proj
+pruning layer 5 name mlp.up_proj
+pruning layer 5 name mlp.down_proj
+pruning layer 6 name self_attn.q_proj
+pruning layer 6 name self_attn.k_proj
+pruning layer 6 name self_attn.v_proj
+pruning layer 6 name self_attn.o_proj
+pruning layer 6 name mlp.gate_proj
+pruning layer 6 name mlp.up_proj
+pruning layer 6 name mlp.down_proj
+pruning layer 7 name self_attn.q_proj
+pruning layer 7 name self_attn.k_proj
+pruning layer 7 name self_attn.v_proj
+pruning layer 7 name self_attn.o_proj
+pruning layer 7 name mlp.gate_proj
+pruning layer 7 name mlp.up_proj
+pruning layer 7 name mlp.down_proj
+pruning layer 8 name self_attn.q_proj
+pruning layer 8 name self_attn.k_proj
+pruning layer 8 name self_attn.v_proj
+pruning layer 8 name self_attn.o_proj
+pruning layer 8 name mlp.gate_proj
+pruning layer 8 name mlp.up_proj
+pruning layer 8 name mlp.down_proj
+pruning layer 9 name self_attn.q_proj
+pruning layer 9 name self_attn.k_proj
+pruning layer 9 name self_attn.v_proj
+pruning layer 9 name self_attn.o_proj
+pruning layer 9 name mlp.gate_proj
+pruning layer 9 name mlp.up_proj
+pruning layer 9 name mlp.down_proj
+pruning layer 10 name self_attn.q_proj
+pruning layer 10 name self_attn.k_proj
+pruning layer 10 name self_attn.v_proj
+pruning layer 10 name self_attn.o_proj
+pruning layer 10 name mlp.gate_proj
+pruning layer 10 name mlp.up_proj
+pruning layer 10 name mlp.down_proj
+pruning layer 11 name self_attn.q_proj
+pruning layer 11 name self_attn.k_proj
+pruning layer 11 name self_attn.v_proj
+pruning layer 11 name self_attn.o_proj
+pruning layer 11 name mlp.gate_proj
+pruning layer 11 name mlp.up_proj
+pruning layer 11 name mlp.down_proj
+pruning layer 12 name self_attn.q_proj
+pruning layer 12 name self_attn.k_proj
+pruning layer 12 name self_attn.v_proj
+pruning layer 12 name self_attn.o_proj
+pruning layer 12 name mlp.gate_proj
+pruning layer 12 name mlp.up_proj
+pruning layer 12 name mlp.down_proj
+pruning layer 13 name self_attn.q_proj
+pruning layer 13 name self_attn.k_proj
+pruning layer 13 name self_attn.v_proj
+pruning layer 13 name self_attn.o_proj
+pruning layer 13 name mlp.gate_proj
+pruning layer 13 name mlp.up_proj
+pruning layer 13 name mlp.down_proj
+pruning layer 14 name self_attn.q_proj
+pruning layer 14 name self_attn.k_proj
+pruning layer 14 name self_attn.v_proj
+pruning layer 14 name self_attn.o_proj
+pruning layer 14 name mlp.gate_proj
+pruning layer 14 name mlp.up_proj
+pruning layer 14 name mlp.down_proj
+pruning layer 15 name self_attn.q_proj
+pruning layer 15 name self_attn.k_proj
+pruning layer 15 name self_attn.v_proj
+pruning layer 15 name self_attn.o_proj
+pruning layer 15 name mlp.gate_proj
+pruning layer 15 name mlp.up_proj
+pruning layer 15 name mlp.down_proj
+pruning layer 16 name self_attn.q_proj
+pruning layer 16 name self_attn.k_proj
+pruning layer 16 name self_attn.v_proj
+pruning layer 16 name self_attn.o_proj
+pruning layer 16 name mlp.gate_proj
+pruning layer 16 name mlp.up_proj
+pruning layer 16 name mlp.down_proj
+pruning layer 17 name self_attn.q_proj
+pruning layer 17 name self_attn.k_proj
+pruning layer 17 name self_attn.v_proj
+pruning layer 17 name self_attn.o_proj
+pruning layer 17 name mlp.gate_proj
+pruning layer 17 name mlp.up_proj
+pruning layer 17 name mlp.down_proj
+pruning layer 18 name self_attn.q_proj
+pruning layer 18 name self_attn.k_proj
+pruning layer 18 name self_attn.v_proj
+pruning layer 18 name self_attn.o_proj
+pruning layer 18 name mlp.gate_proj
+pruning layer 18 name mlp.up_proj
+pruning layer 18 name mlp.down_proj
+pruning layer 19 name self_attn.q_proj
+pruning layer 19 name self_attn.k_proj
+pruning layer 19 name self_attn.v_proj
+pruning layer 19 name self_attn.o_proj
+pruning layer 19 name mlp.gate_proj
+pruning layer 19 name mlp.up_proj
+pruning layer 19 name mlp.down_proj
+pruning layer 20 name self_attn.q_proj
+pruning layer 20 name self_attn.k_proj
+pruning layer 20 name self_attn.v_proj
+pruning layer 20 name self_attn.o_proj
+pruning layer 20 name mlp.gate_proj
+pruning layer 20 name mlp.up_proj
+pruning layer 20 name mlp.down_proj
+pruning layer 21 name self_attn.q_proj
+pruning layer 21 name self_attn.k_proj
+pruning layer 21 name self_attn.v_proj
+pruning layer 21 name self_attn.o_proj
+pruning layer 21 name mlp.gate_proj
+pruning layer 21 name mlp.up_proj
+pruning layer 21 name mlp.down_proj
+pruning layer 22 name self_attn.q_proj
+pruning layer 22 name self_attn.k_proj
+pruning layer 22 name self_attn.v_proj
+pruning layer 22 name self_attn.o_proj
+pruning layer 22 name mlp.gate_proj
+pruning layer 22 name mlp.up_proj
+pruning layer 22 name mlp.down_proj
+pruning layer 23 name self_attn.q_proj
+pruning layer 23 name self_attn.k_proj
+pruning layer 23 name self_attn.v_proj
+pruning layer 23 name self_attn.o_proj
+pruning layer 23 name mlp.gate_proj
+pruning layer 23 name mlp.up_proj
+pruning layer 23 name mlp.down_proj
+pruning layer 24 name self_attn.q_proj
+pruning layer 24 name self_attn.k_proj
+pruning layer 24 name self_attn.v_proj
+pruning layer 24 name self_attn.o_proj
+pruning layer 24 name mlp.gate_proj
+pruning layer 24 name mlp.up_proj
+pruning layer 24 name mlp.down_proj
+pruning layer 25 name self_attn.q_proj
+pruning layer 25 name self_attn.k_proj
+pruning layer 25 name self_attn.v_proj
+pruning layer 25 name self_attn.o_proj
+pruning layer 25 name mlp.gate_proj
+pruning layer 25 name mlp.up_proj
+pruning layer 25 name mlp.down_proj
+pruning layer 26 name self_attn.q_proj
+pruning layer 26 name self_attn.k_proj
+pruning layer 26 name self_attn.v_proj
+pruning layer 26 name self_attn.o_proj
+pruning layer 26 name mlp.gate_proj
+pruning layer 26 name mlp.up_proj
+pruning layer 26 name mlp.down_proj
+pruning layer 27 name self_attn.q_proj
+pruning layer 27 name self_attn.k_proj
+pruning layer 27 name self_attn.v_proj
+pruning layer 27 name self_attn.o_proj
+pruning layer 27 name mlp.gate_proj
+pruning layer 27 name mlp.up_proj
+pruning layer 27 name mlp.down_proj
+******************************
+layer 0 sparsity 0.399875
+layer 1 sparsity 0.399874
+layer 2 sparsity 0.399875
+layer 3 sparsity 0.399874
+layer 4 sparsity 0.399874
+layer 5 sparsity 0.399874
+layer 6 sparsity 0.399874
+layer 7 sparsity 0.399874
+layer 8 sparsity 0.399874
+layer 9 sparsity 0.399875
+layer 10 sparsity 0.399874
+layer 11 sparsity 0.399875
+layer 12 sparsity 0.399874
+layer 13 sparsity 0.399875
+layer 14 sparsity 0.399875
+layer 15 sparsity 0.399875
+layer 16 sparsity 0.399875
+layer 17 sparsity 0.399875
+layer 18 sparsity 0.399875
+layer 19 sparsity 0.399874
+layer 20 sparsity 0.399874
+layer 21 sparsity 0.399874
+layer 22 sparsity 0.399874
+layer 23 sparsity 0.399874
+layer 24 sparsity 0.399874
+layer 25 sparsity 0.399874
+layer 26 sparsity 0.399874
+layer 27 sparsity 0.399874
+sparsity sanity check 0.399874
+******************************Token indices sequence length is longer than the specified maximum sequence length for this model (299078 > 131072). Running this sequence through the model will result in indexing errors
+
+evaluating on wikitext
+nsamples 73
+sample 0
+sample 50
+wikitext perplexity 55481.30859375
+out/qwen2_5-7b/unstructured/wanda/eval_0.40/attack_0.400000
+Loading model with VLLM from temp/wanda_usediff_False_recover_False (model kept in memory for later eval)
+INFO 11-02 21:09:54 [utils.py:233] non-default args: {'tokenizer': './models/qwen2.5-7B', 'dtype': 'bfloat16', 'max_model_len': 4096, 'gpu_memory_utilization': 0.7, 'disable_log_stats': True, 'model': 'temp/wanda_usediff_False_recover_False'}
+INFO 11-02 21:09:54 [model.py:547] Resolved architecture: Qwen2ForCausalLM
+INFO 11-02 21:09:54 [model.py:1510] Using max model len 4096
+INFO 11-02 21:09:54 [scheduler.py:205] Chunked prefill is enabled with max_num_batched_tokens=16384.
+WARNING 11-02 21:09:54 [__init__.py:3036] We must use the `spawn` multiprocessing start method. Overriding VLLM_WORKER_MULTIPROC_METHOD to 'spawn'. See https://docs.vllm.ai/en/latest/usage/troubleshooting.html#python-multiprocessing for more information. Reasons: CUDA is initialized
+INFO 11-02 21:09:56 [__init__.py:216] Automatically detected platform cuda.
+torch 2.8.0
+transformers 4.57.1
+accelerate 1.11.0
+# of gpus:  1
+[1;36m(EngineCore_DP0 pid=78358)[0;0m INFO 11-02 21:09:57 [core.py:644] Waiting for init message from front-end.
+[1;36m(EngineCore_DP0 pid=78358)[0;0m INFO 11-02 21:09:57 [core.py:77] Initializing a V1 LLM engine (v0.11.0) with config: model='temp/wanda_usediff_False_recover_False', speculative_config=None, tokenizer='./models/qwen2.5-7B', skip_tokenizer_init=False, tokenizer_mode=auto, revision=None, tokenizer_revision=None, trust_remote_code=False, dtype=torch.bfloat16, max_seq_len=4096, download_dir=None, load_format=auto, tensor_parallel_size=1, pipeline_parallel_size=1, data_parallel_size=1, disable_custom_all_reduce=False, quantization=None, enforce_eager=False, kv_cache_dtype=auto, device_config=cuda, structured_outputs_config=StructuredOutputsConfig(backend='auto', disable_fallback=False, disable_any_whitespace=False, disable_additional_properties=False, reasoning_parser=''), observability_config=ObservabilityConfig(show_hidden_metrics_for_version=None, otlp_traces_endpoint=None, collect_detailed_traces=None), seed=0, served_model_name=temp/wanda_usediff_False_recover_False, enable_prefix_caching=True, chunked_prefill_enabled=True, pooler_config=None, compilation_config={"level":3,"debug_dump_path":"","cache_dir":"","backend":"","custom_ops":[],"splitting_ops":["vllm.unified_attention","vllm.unified_attention_with_output","vllm.mamba_mixer2","vllm.mamba_mixer","vllm.short_conv","vllm.linear_attention","vllm.plamo2_mamba_mixer","vllm.gdn_attention","vllm.sparse_attn_indexer"],"use_inductor":true,"compile_sizes":[],"inductor_compile_config":{"enable_auto_functionalized_v2":false},"inductor_passes":{},"cudagraph_mode":[2,1],"use_cudagraph":true,"cudagraph_num_of_warmups":1,"cudagraph_capture_sizes":[512,504,496,488,480,472,464,456,448,440,432,424,416,408,400,392,384,376,368,360,352,344,336,328,320,312,304,296,288,280,272,264,256,248,240,232,224,216,208,200,192,184,176,168,160,152,144,136,128,120,112,104,96,88,80,72,64,56,48,40,32,24,16,8,4,2,1],"cudagraph_copy_inputs":false,"full_cuda_graph":false,"use_inductor_graph_partition":false,"pass_config":{},"max_capture_size":512,"local_cache_dir":null}
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[1;36m(EngineCore_DP0 pid=78358)[0;0m INFO 11-02 21:09:58 [parallel_state.py:1208] rank 0 in world size 1 is assigned as DP rank 0, PP rank 0, TP rank 0, EP rank 0
+[1;36m(EngineCore_DP0 pid=78358)[0;0m WARNING 11-02 21:09:58 [topk_topp_sampler.py:66] FlashInfer is not available. Falling back to the PyTorch-native implementation of top-p & top-k sampling. For the best performance, please install FlashInfer.
+[1;36m(EngineCore_DP0 pid=78358)[0;0m INFO 11-02 21:09:58 [gpu_model_runner.py:2602] Starting to load model temp/wanda_usediff_False_recover_False...
+[1;36m(EngineCore_DP0 pid=78358)[0;0m INFO 11-02 21:09:58 [gpu_model_runner.py:2634] Loading model from scratch...
+[1;36m(EngineCore_DP0 pid=78358)[0;0m INFO 11-02 21:09:58 [cuda.py:366] Using Flash Attention backend on V1 engine.
+[1;36m(EngineCore_DP0 pid=78358)[0;0m Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00<?, ?it/s]
+[1;36m(EngineCore_DP0 pid=78358)[0;0m Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00<00:01,  2.86it/s]
+[1;36m(EngineCore_DP0 pid=78358)[0;0m Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:00<00:00,  4.59it/s]
+[1;36m(EngineCore_DP0 pid=78358)[0;0m Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:00<00:00,  3.66it/s]
+[1;36m(EngineCore_DP0 pid=78358)[0;0m Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:01<00:00,  3.37it/s]
+[1;36m(EngineCore_DP0 pid=78358)[0;0m Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:01<00:00,  3.49it/s]
+[1;36m(EngineCore_DP0 pid=78358)[0;0m 
+[1;36m(EngineCore_DP0 pid=78358)[0;0m INFO 11-02 21:09:59 [default_loader.py:267] Loading weights took 1.18 seconds
+[1;36m(EngineCore_DP0 pid=78358)[0;0m INFO 11-02 21:10:00 [gpu_model_runner.py:2653] Model loading took 14.2717 GiB and 1.245729 seconds
+[1;36m(EngineCore_DP0 pid=78358)[0;0m INFO 11-02 21:10:01 [backends.py:548] Using cache directory: /home/oligo/.cache/vllm/torch_compile_cache/4ee053d2df/rank_0_0/backbone for vLLM's torch.compile
+[1;36m(EngineCore_DP0 pid=78358)[0;0m INFO 11-02 21:10:01 [backends.py:559] Dynamo bytecode transform time: 1.64 s
+[1;36m(EngineCore_DP0 pid=78358)[0;0m INFO 11-02 21:10:02 [backends.py:164] Directly load the compiled graph(s) for dynamic shape from the cache, took 0.470 s
+[1;36m(EngineCore_DP0 pid=78358)[0;0m INFO 11-02 21:10:02 [monitor.py:34] torch.compile takes 1.64 s in total
+[1;36m(EngineCore_DP0 pid=78358)[0;0m INFO 11-02 21:10:04 [gpu_worker.py:298] Available KV cache memory: 46.48 GiB
+[1;36m(EngineCore_DP0 pid=78358)[0;0m INFO 11-02 21:10:04 [kv_cache_utils.py:1087] GPU KV cache size: 870,368 tokens
+[1;36m(EngineCore_DP0 pid=78358)[0;0m INFO 11-02 21:10:04 [kv_cache_utils.py:1091] Maximum concurrency for 4,096 tokens per request: 212.49x
+[1;36m(EngineCore_DP0 pid=78358)[0;0m Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):   0%|          | 0/67 [00:00<?, ?it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):   6%|▌         | 4/67 [00:00<00:01, 36.52it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  12%|█▏        | 8/67 [00:00<00:01, 34.35it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  18%|█▊        | 12/67 [00:00<00:01, 34.77it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  24%|██▍       | 16/67 [00:00<00:01, 35.25it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  31%|███▏      | 21/67 [00:00<00:01, 38.60it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  39%|███▉      | 26/67 [00:00<00:01, 40.78it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  46%|████▋     | 31/67 [00:00<00:00, 42.70it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  55%|█████▌    | 37/67 [00:00<00:00, 46.50it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  64%|██████▍   | 43/67 [00:00<00:00, 49.69it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  72%|███████▏  | 48/67 [00:01<00:00, 49.69it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  79%|███████▉  | 53/67 [00:01<00:00, 48.84it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  88%|████████▊ | 59/67 [00:01<00:00, 50.73it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  99%|█████████▊| 66/67 [00:01<00:00, 54.43it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE): 100%|██████████| 67/67 [00:01<00:00, 45.97it/s]
+[1;36m(EngineCore_DP0 pid=78358)[0;0m Capturing CUDA graphs (decode, FULL):   0%|          | 0/67 [00:00<?, ?it/s]Capturing CUDA graphs (decode, FULL):   4%|▍         | 3/67 [00:00<00:02, 25.77it/s]Capturing CUDA graphs (decode, FULL):  10%|█         | 7/67 [00:00<00:01, 30.41it/s]Capturing CUDA graphs (decode, FULL):  16%|█▋        | 11/67 [00:00<00:01, 31.80it/s]Capturing CUDA graphs (decode, FULL):  22%|██▏       | 15/67 [00:00<00:01, 33.14it/s]Capturing CUDA graphs (decode, FULL):  30%|██▉       | 20/67 [00:00<00:01, 36.03it/s]Capturing CUDA graphs (decode, FULL):  37%|███▋      | 25/67 [00:00<00:01, 38.31it/s]Capturing CUDA graphs (decode, FULL):  43%|████▎     | 29/67 [00:00<00:01, 37.83it/s]Capturing CUDA graphs (decode, FULL):  51%|█████     | 34/67 [00:00<00:00, 41.09it/s]Capturing CUDA graphs (decode, FULL):  60%|█████▉    | 40/67 [00:01<00:00, 45.59it/s]Capturing CUDA graphs (decode, FULL):  67%|██████▋   | 45/67 [00:01<00:00, 46.54it/s]Capturing CUDA graphs (decode, FULL):  76%|███████▌  | 51/67 [00:01<00:00, 49.49it/s]Capturing CUDA graphs (decode, FULL):  85%|████████▌ | 57/67 [00:01<00:00, 51.22it/s]Capturing CUDA graphs (decode, FULL):  96%|█████████▌| 64/67 [00:01<00:00, 54.55it/s]Capturing CUDA graphs (decode, FULL): 100%|██████████| 67/67 [00:01<00:00, 44.62it/s]
+[1;36m(EngineCore_DP0 pid=78358)[0;0m INFO 11-02 21:10:07 [gpu_model_runner.py:3480] Graph capturing finished in 3 secs, took 0.47 GiB
+[1;36m(EngineCore_DP0 pid=78358)[0;0m INFO 11-02 21:10:07 [core.py:210] init engine (profile, create kv cache, warmup model) took 7.66 seconds
+INFO 11-02 21:10:08 [llm.py:306] Supported_tasks: ['generate']
+********************************
+Adding requests:   0%|          | 0/100 [00:00<?, ?it/s]Adding requests: 100%|██████████| 100/100 [00:00<00:00, 5393.01it/s]
+Processed prompts:   0%|          | 0/100 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:   1%|          | 1/100 [00:03<06:06,  3.71s/it, est. speed input: 34.00 toks/s, output: 69.08 toks/s]Processed prompts: 100%|██████████| 100/100 [00:03<00:00,  3.71s/it, est. speed input: 3377.74 toks/s, output: 6878.54 toks/s]Processed prompts: 100%|██████████| 100/100 [00:03<00:00, 26.87it/s, est. speed input: 3377.74 toks/s, output: 6878.54 toks/s]
+Attack finishes in 3.7408485412597656 seconds
+attack evaluation results (inst_basic): 1.0000
+********************************
+Adding requests:   0%|          | 0/100 [00:00<?, ?it/s]Adding requests: 100%|██████████| 100/100 [00:00<00:00, 13968.44it/s]
+Processed prompts:   0%|          | 0/100 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:   1%|          | 1/100 [00:00<00:12,  8.02it/s, est. speed input: 120.32 toks/s, output: 32.08 toks/s]Processed prompts:   8%|▊         | 8/100 [00:00<00:02, 38.12it/s, est. speed input: 618.25 toks/s, output: 238.10 toks/s]Processed prompts:  12%|█▏        | 12/100 [00:00<00:04, 18.17it/s, est. speed input: 359.43 toks/s, output: 279.74 toks/s]Processed prompts:  15%|█▌        | 15/100 [00:02<00:19,  4.26it/s, est. speed input: 110.81 toks/s, output: 222.42 toks/s]Processed prompts:  17%|█▋        | 17/100 [00:03<00:27,  3.04it/s, est. speed input: 82.35 toks/s, output: 277.66 toks/s] Processed prompts: 100%|██████████| 100/100 [00:03<00:00,  3.04it/s, est. speed input: 489.14 toks/s, output: 5861.25 toks/s]Processed prompts: 100%|██████████| 100/100 [00:03<00:00, 26.28it/s, est. speed input: 489.14 toks/s, output: 5861.25 toks/s]
+Attack finishes in 3.812143325805664 seconds
+attack evaluation results (inst_basic, no sys prompt): 0.9100
+********************************
+Adding requests:   0%|          | 0/100 [00:00<?, ?it/s]Adding requests: 100%|██████████| 100/100 [00:00<00:00, 8954.73it/s]
+Processed prompts:   0%|          | 0/500 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:   1%|          | 5/500 [00:01<02:01,  4.08it/s, est. speed input: 69.34 toks/s, output: 68.52 toks/s]Processed prompts:   2%|▏         | 10/500 [00:01<01:10,  6.92it/s, est. speed input: 106.53 toks/s, output: 135.99 toks/s]Processed prompts:   3%|▎         | 15/500 [00:01<00:43, 11.09it/s, est. speed input: 153.72 toks/s, output: 263.93 toks/s]Processed prompts:   7%|▋         | 35/500 [00:01<00:14, 32.66it/s, est. speed input: 321.89 toks/s, output: 635.80 toks/s]Processed prompts:  10%|█         | 50/500 [00:02<00:10, 42.76it/s, est. speed input: 423.38 toks/s, output: 824.76 toks/s]Processed prompts:  15%|█▌        | 75/500 [00:02<00:06, 62.57it/s, est. speed input: 596.97 toks/s, output: 1233.74 toks/s]Processed prompts:  17%|█▋        | 85/500 [00:02<00:06, 67.52it/s, est. speed input: 642.69 toks/s, output: 1363.07 toks/s]Processed prompts:  19%|█▉        | 95/500 [00:02<00:06, 66.92it/s, est. speed input: 678.17 toks/s, output: 1455.83 toks/s]Processed prompts:  21%|██        | 105/500 [00:02<00:06, 64.56it/s, est. speed input: 697.96 toks/s, output: 1555.55 toks/s]Processed prompts:  24%|██▍       | 120/500 [00:02<00:04, 77.85it/s, est. speed input: 759.24 toks/s, output: 1777.13 toks/s]Processed prompts:  26%|██▌       | 130/500 [00:03<00:06, 59.52it/s, est. speed input: 741.43 toks/s, output: 1782.61 toks/s]Processed prompts:  28%|██▊       | 140/500 [00:03<00:05, 66.16it/s, est. speed input: 769.85 toks/s, output: 1913.08 toks/s]Processed prompts:  30%|███       | 150/500 [00:03<00:05, 68.46it/s, est. speed input: 794.31 toks/s, output: 2061.95 toks/s]Processed prompts:  34%|███▍      | 170/500 [00:03<00:03, 95.94it/s, est. speed input: 877.14 toks/s, output: 2455.13 toks/s]Processed prompts:  37%|███▋      | 185/500 [00:03<00:04, 66.31it/s, est. speed input: 864.62 toks/s, output: 2493.15 toks/s]Processed prompts:  39%|███▉      | 195/500 [00:04<00:04, 61.07it/s, est. speed input: 869.98 toks/s, output: 2600.85 toks/s]Processed prompts:  41%|████      | 205/500 [00:04<00:07, 39.57it/s, est. speed input: 806.43 toks/s, output: 2464.61 toks/s]Processed prompts: 100%|██████████| 500/500 [00:04<00:00, 39.57it/s, est. speed input: 2001.12 toks/s, output: 10538.31 toks/s]Processed prompts: 100%|██████████| 500/500 [00:04<00:00, 107.53it/s, est. speed input: 2001.12 toks/s, output: 10538.31 toks/s]
+Attack finishes in 4.661397695541382 seconds
+attack evaluation results (inst_multiple, no sys prompt): 0.7380
+********************************
+Adding requests:   0%|          | 0/100 [00:00<?, ?it/s]Adding requests: 100%|██████████| 100/100 [00:00<00:00, 6591.40it/s]
+Processed prompts:   0%|          | 0/100 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:   1%|          | 1/100 [00:03<06:00,  3.65s/it, est. speed input: 33.19 toks/s, output: 70.22 toks/s]Processed prompts: 100%|██████████| 100/100 [00:03<00:00,  3.65s/it, est. speed input: 3288.47 toks/s, output: 6974.14 toks/s]Processed prompts: 100%|██████████| 100/100 [00:03<00:00, 27.24it/s, est. speed input: 3288.47 toks/s, output: 6974.14 toks/s]
+Attack finishes in 3.6862101554870605 seconds
+attack evaluation results (no_inst_basic): 1.0000
+********************************
+Adding requests:   0%|          | 0/100 [00:00<?, ?it/s]Adding requests: 100%|██████████| 100/100 [00:00<00:00, 15187.95it/s]
+Processed prompts:   0%|          | 0/100 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:   2%|▏         | 2/100 [00:01<00:50,  1.93it/s, est. speed input: 31.85 toks/s, output: 72.39 toks/s]Processed prompts:   4%|▍         | 4/100 [00:02<00:50,  1.88it/s, est. speed input: 29.30 toks/s, output: 140.85 toks/s]Processed prompts:   5%|▌         | 5/100 [00:03<01:20,  1.18it/s, est. speed input: 20.50 toks/s, output: 149.41 toks/s]Processed prompts: 100%|██████████| 100/100 [00:03<00:00,  1.18it/s, est. speed input: 368.13 toks/s, output: 6679.01 toks/s]Processed prompts: 100%|██████████| 100/100 [00:03<00:00, 26.85it/s, est. speed input: 368.13 toks/s, output: 6679.01 toks/s]
+Attack finishes in 3.7310736179351807 seconds
+attack evaluation results (no_inst_basic, no sys prompt): 0.9900
+********************************
+Adding requests:   0%|          | 0/100 [00:00<?, ?it/s]Adding requests: 100%|██████████| 100/100 [00:00<00:00, 9010.13it/s]
+Processed prompts:   0%|          | 0/500 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:   1%|          | 5/500 [00:01<03:04,  2.68it/s, est. speed input: 37.49 toks/s, output: 88.36 toks/s]Processed prompts:   2%|▏         | 10/500 [00:02<01:44,  4.67it/s, est. speed input: 65.11 toks/s, output: 150.38 toks/s]Processed prompts:   3%|▎         | 15/500 [00:04<02:21,  3.44it/s, est. speed input: 58.27 toks/s, output: 175.52 toks/s]Processed prompts:   4%|▍         | 20/500 [00:04<01:38,  4.89it/s, est. speed input: 66.68 toks/s, output: 296.40 toks/s]Processed prompts:   5%|▌         | 25/500 [00:04<01:07,  7.03it/s, est. speed input: 79.01 toks/s, output: 371.78 toks/s]Processed prompts:   6%|▌         | 30/500 [00:04<00:49,  9.45it/s, est. speed input: 88.25 toks/s, output: 422.41 toks/s]Processed prompts:   9%|▉         | 45/500 [00:05<00:32, 14.07it/s, est. speed input: 114.16 toks/s, output: 623.86 toks/s]Processed prompts:  10%|█         | 50/500 [00:05<00:27, 16.10it/s, est. speed input: 122.31 toks/s, output: 750.13 toks/s]Processed prompts:  12%|█▏        | 60/500 [00:05<00:18, 23.44it/s, est. speed input: 143.38 toks/s, output: 990.11 toks/s]Processed prompts:  14%|█▍        | 70/500 [00:06<00:14, 29.40it/s, est. speed input: 170.02 toks/s, output: 1143.76 toks/s]Processed prompts: 100%|██████████| 500/500 [00:06<00:00, 29.40it/s, est. speed input: 1109.05 toks/s, output: 12937.24 toks/s]Processed prompts: 100%|██████████| 500/500 [00:06<00:00, 80.89it/s, est. speed input: 1109.05 toks/s, output: 12937.24 toks/s]
+Attack finishes in 6.192386865615845 seconds
+attack evaluation results (no_inst_multiple, no sys prompt): 0.8980
+Adding requests:   0%|          | 0/100 [00:00<?, ?it/s]Adding requests: 100%|██████████| 100/100 [00:00<00:00, 11513.01it/s]
+Processed prompts:   0%|          | 0/100 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:   1%|          | 1/100 [00:00<00:17,  5.65it/s, est. speed input: 243.18 toks/s, output: 22.62 toks/s]Processed prompts:   5%|▌         | 5/100 [00:00<00:05, 17.76it/s, est. speed input: 629.56 toks/s, output: 129.06 toks/s]Processed prompts:   7%|▋         | 7/100 [00:00<00:09, 10.10it/s, est. speed input: 423.77 toks/s, output: 173.78 toks/s]Processed prompts:   9%|▉         | 9/100 [00:00<00:07, 12.13it/s, est. speed input: 472.56 toks/s, output: 260.63 toks/s]Processed prompts:  11%|█         | 11/100 [00:02<00:27,  3.21it/s, est. speed input: 194.91 toks/s, output: 170.55 toks/s]Processed prompts:  13%|█▎        | 13/100 [00:03<00:41,  2.10it/s, est. speed input: 133.93 toks/s, output: 229.31 toks/s]Processed prompts: 100%|██████████| 100/100 [00:03<00:00,  2.10it/s, est. speed input: 1000.63 toks/s, output: 5854.73 toks/s]Processed prompts: 100%|██████████| 100/100 [00:03<00:00, 25.26it/s, est. speed input: 1000.63 toks/s, output: 5854.73 toks/s]
+Attack finishes in 3.967500686645508 seconds
+Adding requests:   0%|          | 0/100 [00:00<?, ?it/s]Adding requests: 100%|██████████| 100/100 [00:00<00:00, 10849.21it/s]
+Processed prompts:   0%|          | 0/100 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:   1%|          | 1/100 [00:00<00:17,  5.54it/s, est. speed input: 249.34 toks/s, output: 11.08 toks/s]Processed prompts:   8%|▊         | 8/100 [00:00<00:03, 29.95it/s, est. speed input: 1156.58 toks/s, output: 131.72 toks/s]Processed prompts:  12%|█▏        | 12/100 [00:00<00:05, 15.09it/s, est. speed input: 699.36 toks/s, output: 185.79 toks/s]Processed prompts:  15%|█▌        | 15/100 [00:01<00:07, 11.53it/s, est. speed input: 577.43 toks/s, output: 272.60 toks/s]Processed prompts:  17%|█▋        | 17/100 [00:02<00:16,  4.93it/s, est. speed input: 323.93 toks/s, output: 230.39 toks/s]Processed prompts:  19%|█▉        | 19/100 [00:03<00:28,  2.83it/s, est. speed input: 212.94 toks/s, output: 265.29 toks/s]Processed prompts: 100%|██████████| 100/100 [00:03<00:00,  2.83it/s, est. speed input: 1153.23 toks/s, output: 5508.23 toks/s]Processed prompts: 100%|██████████| 100/100 [00:03<00:00, 25.28it/s, est. speed input: 1153.23 toks/s, output: 5508.23 toks/s]
+Attack finishes in 3.9649171829223633 seconds
+Adding requests:   0%|          | 0/100 [00:00<?, ?it/s]Adding requests: 100%|██████████| 100/100 [00:00<00:00, 10809.78it/s]
+Processed prompts:   0%|          | 0/100 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:   1%|          | 1/100 [00:00<00:13,  7.20it/s, est. speed input: 273.76 toks/s, output: 7.20 toks/s]Processed prompts:   2%|▏         | 2/100 [00:00<00:16,  5.85it/s, est. speed input: 228.78 toks/s, output: 48.16 toks/s]Processed prompts:   4%|▍         | 4/100 [00:03<01:47,  1.12s/it, est. speed input: 43.24 toks/s, output: 77.83 toks/s] Processed prompts: 100%|██████████| 100/100 [00:03<00:00,  1.12s/it, est. speed input: 1065.67 toks/s, output: 6689.43 toks/s]Processed prompts: 100%|██████████| 100/100 [00:03<00:00, 26.90it/s, est. speed input: 1065.67 toks/s, output: 6689.43 toks/s]
+[rank0]:[W1102 21:10:45.276575963 ProcessGroupNCCL.cpp:1538] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
+`pretrained` model kwarg is not of type `str`. Many other model arguments may be ignored. Please do not launch via accelerate or use `parallelize=True` if passing an existing model this way.
+Passed an already-initialized model through `pretrained`, assuming single-process call to evaluate() or custom distributed integration
+Attack finishes in 3.7268412113189697 seconds
+attack evaluation results (gcg): 0.9700
+Using pruned model object for evaluation (not reloading from ./models/qwen2.5-7B)
+Traceback (most recent call last):
+  File "/home/oligo/miniconda3/envs/prune_llm_py311/lib/python3.11/site-packages/huggingface_hub/utils/_http.py", line 402, in hf_raise_for_status
+    response.raise_for_status()
+  File "/home/oligo/miniconda3/envs/prune_llm_py311/lib/python3.11/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://huggingface.co/datasets/allenai/openbookqa/resolve/388097ea7776314e93a529163e0fea805b8a6454/openbookqa.py
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/oligo/miniconda3/envs/prune_llm_py311/lib/python3.11/site-packages/datasets/load.py", line 1580, in dataset_module_factory
+    dataset_script_path = api.hf_hub_download(
+                          ^^^^^^^^^^^^^^^^^^^^
+  File "/home/oligo/miniconda3/envs/prune_llm_py311/lib/python3.11/site-packages/huggingface_hub/utils/_validators.py", line 114, in _inner_fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/oligo/miniconda3/envs/prune_llm_py311/lib/python3.11/site-packages/huggingface_hub/hf_api.py", line 5467, in hf_hub_download
+    return hf_hub_download(
+           ^^^^^^^^^^^^^^^^
+  File "/home/oligo/miniconda3/envs/prune_llm_py311/lib/python3.11/site-packages/huggingface_hub/utils/_validators.py", line 114, in _inner_fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/oligo/miniconda3/envs/prune_llm_py311/lib/python3.11/site-packages/huggingface_hub/file_download.py", line 1007, in hf_hub_download
+    return _hf_hub_download_to_cache_dir(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/oligo/miniconda3/envs/prune_llm_py311/lib/python3.11/site-packages/huggingface_hub/file_download.py", line 1070, in _hf_hub_download_to_cache_dir
+    (url_to_download, etag, commit_hash, expected_size, xet_file_data, head_call_error) = _get_metadata_or_catch_error(
+                                                                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/oligo/miniconda3/envs/prune_llm_py311/lib/python3.11/site-packages/huggingface_hub/file_download.py", line 1543, in _get_metadata_or_catch_error
+    metadata = get_hf_file_metadata(
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/oligo/miniconda3/envs/prune_llm_py311/lib/python3.11/site-packages/huggingface_hub/utils/_validators.py", line 114, in _inner_fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/oligo/miniconda3/envs/prune_llm_py311/lib/python3.11/site-packages/huggingface_hub/file_download.py", line 1460, in get_hf_file_metadata
+    r = _request_wrapper(
+        ^^^^^^^^^^^^^^^^^
+  File "/home/oligo/miniconda3/envs/prune_llm_py311/lib/python3.11/site-packages/huggingface_hub/file_download.py", line 302, in _request_wrapper
+    return _request_wrapper(method=method, url=next_url, follow_relative_redirects=True, **params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/oligo/miniconda3/envs/prune_llm_py311/lib/python3.11/site-packages/huggingface_hub/file_download.py", line 283, in _request_wrapper
+    response = _request_wrapper(
+               ^^^^^^^^^^^^^^^^^
+  File "/home/oligo/miniconda3/envs/prune_llm_py311/lib/python3.11/site-packages/huggingface_hub/file_download.py", line 307, in _request_wrapper
+    hf_raise_for_status(response)
+  File "/home/oligo/miniconda3/envs/prune_llm_py311/lib/python3.11/site-packages/huggingface_hub/utils/_http.py", line 413, in hf_raise_for_status
+    raise _format(EntryNotFoundError, message, response) from e
+huggingface_hub.errors.EntryNotFoundError: 404 Client Error. (Request ID: Root=1-69080f2c-5a0f207f0bc4c70912a5624d;d0bc94b9-a040-4bcb-a69b-f9d4de8cb9de)
+
+Entry Not Found for url: https://huggingface.co/datasets/allenai/openbookqa/resolve/388097ea7776314e93a529163e0fea805b8a6454/openbookqa.py.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/oligo/Documents/Personal Repositories/alignmentAttributionCode/main.py", line 648, in <module>
+    main()
+  File "/home/oligo/Documents/Personal Repositories/alignmentAttributionCode/main.py", line 597, in main
+    results = eval_zero_shot(
+              ^^^^^^^^^^^^^^^
+  File "/home/oligo/Documents/Personal Repositories/alignmentAttributionCode/lib/eval.py", line 247, in eval_zero_shot
+    results = evaluator.simple_evaluate(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/oligo/miniconda3/envs/prune_llm_py311/lib/python3.11/site-packages/lm_eval/utils.py", line 456, in _wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/oligo/miniconda3/envs/prune_llm_py311/lib/python3.11/site-packages/lm_eval/evaluator.py", line 283, in simple_evaluate
+    task_dict = get_task_dict(
+                ^^^^^^^^^^^^^^
+  File "/home/oligo/miniconda3/envs/prune_llm_py311/lib/python3.11/site-packages/lm_eval/tasks/__init__.py", line 635, in get_task_dict
+    task_name_from_string_dict = task_manager.load_task_or_group(
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/oligo/miniconda3/envs/prune_llm_py311/lib/python3.11/site-packages/lm_eval/tasks/__init__.py", line 426, in load_task_or_group
+    collections.ChainMap(
+  File "/home/oligo/miniconda3/envs/prune_llm_py311/lib/python3.11/site-packages/lm_eval/tasks/__init__.py", line 428, in <lambda>
+    lambda task: self._load_individual_task_or_group(task),
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/oligo/miniconda3/envs/prune_llm_py311/lib/python3.11/site-packages/lm_eval/tasks/__init__.py", line 326, in _load_individual_task_or_group
+    return _load_task(task_config, task=name_or_config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/oligo/miniconda3/envs/prune_llm_py311/lib/python3.11/site-packages/lm_eval/tasks/__init__.py", line 286, in _load_task
+    task_object = ConfigurableTask(config=config)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/oligo/miniconda3/envs/prune_llm_py311/lib/python3.11/site-packages/lm_eval/api/task.py", line 865, in __init__
+    self.download(self.config.dataset_kwargs)
+  File "/home/oligo/miniconda3/envs/prune_llm_py311/lib/python3.11/site-packages/lm_eval/api/task.py", line 997, in download
+    self.dataset = datasets.load_dataset(
+                   ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/oligo/miniconda3/envs/prune_llm_py311/lib/python3.11/site-packages/datasets/load.py", line 2062, in load_dataset
+    builder_instance = load_dataset_builder(
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/oligo/miniconda3/envs/prune_llm_py311/lib/python3.11/site-packages/datasets/load.py", line 1782, in load_dataset_builder
+    dataset_module = dataset_module_factory(
+                     ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/oligo/miniconda3/envs/prune_llm_py311/lib/python3.11/site-packages/datasets/load.py", line 1629, in dataset_module_factory
+    ).get_module()
+      ^^^^^^^^^^^^
+  File "/home/oligo/miniconda3/envs/prune_llm_py311/lib/python3.11/site-packages/datasets/load.py", line 995, in get_module
+    exported_dataset_infos = _dataset_viewer.get_exported_dataset_infos(
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/oligo/miniconda3/envs/prune_llm_py311/lib/python3.11/site-packages/datasets/utils/_dataset_viewer.py", line 71, in get_exported_dataset_infos
+    info_response = get_session().get(
+                    ^^^^^^^^^^^^^^^^^^
+  File "/home/oligo/miniconda3/envs/prune_llm_py311/lib/python3.11/site-packages/requests/sessions.py", line 602, in get
+    return self.request("GET", url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/oligo/miniconda3/envs/prune_llm_py311/lib/python3.11/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/oligo/miniconda3/envs/prune_llm_py311/lib/python3.11/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/oligo/miniconda3/envs/prune_llm_py311/lib/python3.11/site-packages/huggingface_hub/utils/_http.py", line 95, in send
+    return super().send(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/oligo/miniconda3/envs/prune_llm_py311/lib/python3.11/site-packages/requests/adapters.py", line 644, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/home/oligo/miniconda3/envs/prune_llm_py311/lib/python3.11/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/home/oligo/miniconda3/envs/prune_llm_py311/lib/python3.11/site-packages/urllib3/connectionpool.py", line 534, in _make_request
+    response = conn.getresponse()
+               ^^^^^^^^^^^^^^^^^^
+  File "/home/oligo/miniconda3/envs/prune_llm_py311/lib/python3.11/site-packages/urllib3/connection.py", line 565, in getresponse
+    httplib_response = super().getresponse()
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/oligo/miniconda3/envs/prune_llm_py311/lib/python3.11/http/client.py", line 1395, in getresponse
+    response.begin()
+  File "/home/oligo/miniconda3/envs/prune_llm_py311/lib/python3.11/http/client.py", line 325, in begin
+    version, status, reason = self._read_status()
+                              ^^^^^^^^^^^^^^^^^^^
+  File "/home/oligo/miniconda3/envs/prune_llm_py311/lib/python3.11/http/client.py", line 286, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/oligo/miniconda3/envs/prune_llm_py311/lib/python3.11/socket.py", line 718, in readinto
+    return self._sock.recv_into(b)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/oligo/miniconda3/envs/prune_llm_py311/lib/python3.11/ssl.py", line 1314, in recv_into
+    return self.read(nbytes, buffer)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/oligo/miniconda3/envs/prune_llm_py311/lib/python3.11/ssl.py", line 1166, in read
+    return self._sslobj.read(len, buffer)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt

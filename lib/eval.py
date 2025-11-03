@@ -220,6 +220,7 @@ def eval_zero_shot(
     limit=None,
 ):
     from lm_eval import tasks, evaluator
+    from lm_eval.models.huggingface import HFLM
 
     def pattern_match(patterns, source_list):
         task_names = set()
@@ -228,27 +229,29 @@ def eval_zero_shot(
                 task_names.add(matching)
         return list(task_names)
 
-    task_names = pattern_match(task_list, tasks.ALL_TASKS)
-    model_args = f"pretrained={model_name},cache_dir=./llm_weights"
-    if use_accelerate:
-        model_args = (
-            f"pretrained={model_name},cache_dir=./llm_weights,use_accelerate=True"
-        )
+    # lm-eval 0.4.x uses TaskManager instead of ALL_TASKS
+    task_manager = tasks.TaskManager()
+    all_tasks = task_manager.all_tasks  # Already a list in 0.4.x
+    task_names = pattern_match(task_list, all_tasks)
+    
+    # CRITICAL FIX: Use the actual pruned model object instead of reloading from path
+    # Wrap the pruned model in lm-eval's HFLM wrapper to use it directly
+    print(f"Using pruned model object for evaluation (not reloading from {model_name})")
+    lm_eval_model = HFLM(pretrained=model, tokenizer=tokenizer)
+    
+    # lm-eval 0.4.x API changes:
+    # - no_cache=True is removed (caching behavior changed)
+    # - description_dict, decontamination_ngrams_path removed
+    # - pretrained_model, tokenizer, add_special_tokens removed
+    # - model can be a model object (using HFLM wrapper)
     results = evaluator.simple_evaluate(
-        model="hf-causal-experimental",
-        model_args=model_args,
+        model=lm_eval_model,  # Pass the wrapped pruned model directly
         tasks=task_names,
         num_fewshot=num_fewshot,
         batch_size=None,
         device=None,
-        no_cache=True,
         limit=limit,
-        description_dict={},
-        decontamination_ngrams_path=None,
         check_integrity=False,
-        pretrained_model=model,
-        tokenizer=tokenizer,
-        add_special_tokens=add_special_tokens,
     )
 
     return results

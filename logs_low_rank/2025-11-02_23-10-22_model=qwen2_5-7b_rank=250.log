@@ -1,0 +1,169 @@
+INFO 11-02 23:10:24 [__init__.py:216] Automatically detected platform cuda.
+`torch_dtype` is deprecated! Use `dtype` instead!
+torch 2.8.0
+transformers 4.57.1
+accelerate 1.11.0
+# of gpus:  1
+Disentangle: True
+loading llm model qwen2_5-7b
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:01<00:04,  1.37s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:02<00:02,  1.39s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:04<00:01,  1.39s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:05<00:00,  1.35s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:05<00:00,  1.36s/it]
+use device  cuda:0
+loading calibdation data align
+dataset loading complete
+making low rank:  model.layers.0.self_attn.q_proj
+remaining: rank model.layers.0.self_attn.q_proj = 3334 / 3584
+making low rank:  model.layers.0.self_attn.k_proj
+remaining: rank model.layers.0.self_attn.k_proj = 262 / 512
+making low rank:  model.layers.0.self_attn.v_proj
+remaining: rank model.layers.0.self_attn.v_proj = 262 / 512
+making low rank:  model.layers.0.self_attn.o_proj
+remaining: rank model.layers.0.self_attn.o_proj = 3334 / 3584
+making low rank:  model.layers.0.mlp.gate_proj
+remaining: rank model.layers.0.mlp.gate_proj = 3334 / 3584
+making low rank:  model.layers.0.mlp.up_proj
+remaining: rank model.layers.0.mlp.up_proj = 3334 / 3584
+making low rank:  model.layers.0.mlp.down_proj
+remaining: rank model.layers.0.mlp.down_proj = 3334 / 3584
+14.728696346282959
+making low rank:  model.layers.1.self_attn.q_proj
+remaining: rank model.layers.1.self_attn.q_proj = 3334 / 3584
+making low rank:  model.layers.1.self_attn.k_proj
+remaining: rank model.layers.1.self_attn.k_proj = 262 / 512
+making low rank:  model.layers.1.self_attn.v_proj
+remaining: rank model.layers.1.self_attn.v_proj = 262 / 512
+making low rank:  model.layers.1.self_attn.o_proj
+remaining: rank model.layers.1.self_attn.o_proj = 3334 / 3584
+making low rank:  model.layers.1.mlp.gate_proj
+remaining: rank model.layers.1.mlp.gate_proj = 3334 / 3584
+making low rank:  model.layers.1.mlp.up_proj
+remaining: rank model.layers.1.mlp.up_proj = 3334 / 3584
+making low rank:  model.layers.1.mlp.down_proj
+remaining: rank model.layers.1.mlp.down_proj = 3334 / 3584
+14.728696346282959
+making low rank:  model.layers.2.self_attn.q_proj
+remaining: rank model.layers.2.self_attn.q_proj = 3334 / 3584
+making low rank:  model.layers.2.self_attn.k_proj
+remaining: rank model.layers.2.self_attn.k_proj = 262 / 512
+making low rank:  model.layers.2.self_attn.v_proj
+remaining: rank model.layers.2.self_attn.v_proj = 262 / 512
+making low rank:  model.layers.2.self_attn.o_proj
+remaining: rank model.layers.2.self_attn.o_proj = 3334 / 3584
+making low rank:  model.layers.2.mlp.gate_proj
+remaining: rank model.layers.2.mlp.gate_proj = 3334 / 3584
+making low rank:  model.layers.2.mlp.up_proj
+remaining: rank model.layers.2.mlp.up_proj = 3334 / 3584
+making low rank:  model.layers.2.mlp.down_proj
+remaining: rank model.layers.2.mlp.down_proj = 3334 / 3584
+14.728696346282959
+making low rank:  model.layers.3.self_attn.q_proj
+remaining: rank model.layers.3.self_attn.q_proj = 3334 / 3584
+making low rank:  model.layers.3.self_attn.k_proj
+remaining: rank model.layers.3.self_attn.k_proj = 262 / 512
+making low rank:  model.layers.3.self_attn.v_proj
+remaining: rank model.layers.3.self_attn.v_proj = 262 / 512
+making low rank:  model.layers.3.self_attn.o_proj
+remaining: rank model.layers.3.self_attn.o_proj = 3334 / 3584
+making low rank:  model.layers.3.mlp.gate_proj
+remaining: rank model.layers.3.mlp.gate_proj = 3334 / 3584
+making low rank:  model.layers.3.mlp.up_proj
+remaining: rank model.layers.3.mlp.up_proj = 3334 / 3584
+making low rank:  model.layers.3.mlp.down_proj
+remaining: rank model.layers.3.mlp.down_proj = 3334 / 3584
+14.728696346282959
+making low rank:  model.layers.4.self_attn.q_proj
+remaining: rank model.layers.4.self_attn.q_proj = 3334 / 3584
+making low rank:  model.layers.4.self_attn.k_proj
+remaining: rank model.layers.4.self_attn.k_proj = 262 / 512
+making low rank:  model.layers.4.self_attn.v_proj
+remaining: rank model.layers.4.self_attn.v_proj = 262 / 512
+making low rank:  model.layers.4.self_attn.o_proj
+remaining: rank model.layers.4.self_attn.o_proj = 3334 / 3584
+making low rank:  model.layers.4.mlp.gate_proj
+remaining: rank model.layers.4.mlp.gate_proj = 3334 / 3584
+making low rank:  model.layers.4.mlp.up_proj
+remaining: rank model.layers.4.mlp.up_proj = 3334 / 3584
+making low rank:  model.layers.4.mlp.down_proj
+remaining: rank model.layers.4.mlp.down_proj = 3334 / 3584
+14.728696346282959
+making low rank:  model.layers.5.self_attn.q_proj
+remaining: rank model.layers.5.self_attn.q_proj = 3334 / 3584
+making low rank:  model.layers.5.self_attn.k_proj
+remaining: rank model.layers.5.self_attn.k_proj = 262 / 512
+making low rank:  model.layers.5.self_attn.v_proj
+remaining: rank model.layers.5.self_attn.v_proj = 262 / 512
+making low rank:  model.layers.5.self_attn.o_proj
+remaining: rank model.layers.5.self_attn.o_proj = 3334 / 3584
+making low rank:  model.layers.5.mlp.gate_proj
+remaining: rank model.layers.5.mlp.gate_proj = 3334 / 3584
+making low rank:  model.layers.5.mlp.up_proj
+remaining: rank model.layers.5.mlp.up_proj = 3334 / 3584
+making low rank:  model.layers.5.mlp.down_proj
+remaining: rank model.layers.5.mlp.down_proj = 3334 / 3584
+14.728696346282959
+making low rank:  model.layers.6.self_attn.q_proj
+remaining: rank model.layers.6.self_attn.q_proj = 3334 / 3584
+making low rank:  model.layers.6.self_attn.k_proj
+remaining: rank model.layers.6.self_attn.k_proj = 262 / 512
+making low rank:  model.layers.6.self_attn.v_proj
+remaining: rank model.layers.6.self_attn.v_proj = 262 / 512
+making low rank:  model.layers.6.self_attn.o_proj
+remaining: rank model.layers.6.self_attn.o_proj = 3334 / 3584
+making low rank:  model.layers.6.mlp.gate_proj
+remaining: rank model.layers.6.mlp.gate_proj = 3334 / 3584
+making low rank:  model.layers.6.mlp.up_proj
+remaining: rank model.layers.6.mlp.up_proj = 3334 / 3584
+making low rank:  model.layers.6.mlp.down_proj
+remaining: rank model.layers.6.mlp.down_proj = 3334 / 3584
+14.728696346282959
+making low rank:  model.layers.7.self_attn.q_proj
+remaining: rank model.layers.7.self_attn.q_proj = 3334 / 3584
+making low rank:  model.layers.7.self_attn.k_proj
+remaining: rank model.layers.7.self_attn.k_proj = 262 / 512
+making low rank:  model.layers.7.self_attn.v_proj
+remaining: rank model.layers.7.self_attn.v_proj = 262 / 512
+making low rank:  model.layers.7.self_attn.o_proj
+remaining: rank model.layers.7.self_attn.o_proj = 3334 / 3584
+making low rank:  model.layers.7.mlp.gate_proj
+remaining: rank model.layers.7.mlp.gate_proj = 3334 / 3584
+making low rank:  model.layers.7.mlp.up_proj
+remaining: rank model.layers.7.mlp.up_proj = 3334 / 3584
+making low rank:  model.layers.7.mlp.down_proj
+remaining: rank model.layers.7.mlp.down_proj = 3334 / 3584
+14.728696346282959
+making low rank:  model.layers.8.self_attn.q_proj
+remaining: rank model.layers.8.self_attn.q_proj = 3334 / 3584
+making low rank:  model.layers.8.self_attn.k_proj
+remaining: rank model.layers.8.self_attn.k_proj = 262 / 512
+making low rank:  model.layers.8.self_attn.v_proj
+remaining: rank model.layers.8.self_attn.v_proj = 262 / 512
+making low rank:  model.layers.8.self_attn.o_proj
+remaining: rank model.layers.8.self_attn.o_proj = 3334 / 3584
+making low rank:  model.layers.8.mlp.gate_proj
+remaining: rank model.layers.8.mlp.gate_proj = 3334 / 3584
+making low rank:  model.layers.8.mlp.up_proj
+remaining: rank model.layers.8.mlp.up_proj = 3334 / 3584
+making low rank:  model.layers.8.mlp.down_proj
+remaining: rank model.layers.8.mlp.down_proj = 3334 / 3584
+14.728696346282959
+making low rank:  model.layers.9.self_attn.q_proj
+remaining: rank model.layers.9.self_attn.q_proj = 3334 / 3584
+making low rank:  model.layers.9.self_attn.k_proj
+remaining: rank model.layers.9.self_attn.k_proj = 262 / 512
+making low rank:  model.layers.9.self_attn.v_proj
+remaining: rank model.layers.9.self_attn.v_proj = 262 / 512
+making low rank:  model.layers.9.self_attn.o_proj
+remaining: rank model.layers.9.self_attn.o_proj = 3334 / 3584
+making low rank:  model.layers.9.mlp.gate_proj
+remaining: rank model.layers.9.mlp.gate_proj = 3334 / 3584
+making low rank:  model.layers.9.mlp.up_proj
+remaining: rank model.layers.9.mlp.up_proj = 3334 / 3584
+making low rank:  model.layers.9.mlp.down_proj
+remaining: rank model.layers.9.mlp.down_proj = 3334 / 3584
+14.728696346282959
+making low rank:  model.layers.10.self_attn.q_proj
+remaining: rank model.layers.10.self_attn.q_proj = 3334 / 3584
+making low rank:  model.layers.10.self_attn.k_proj
+remaining: rank model.layers.10.self_attn.k_proj = 262 / 512
+making low rank:  model.layers.10.self_attn.v_proj
+remaining: rank model.layers.10.self_attn.v_proj = 262 / 512
+making low rank: 

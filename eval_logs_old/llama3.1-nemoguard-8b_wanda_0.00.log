@@ -1,0 +1,61 @@
+nohup: ignoring input
+INFO 11-02 19:56:37 [__init__.py:216] Automatically detected platform cuda.
+`torch_dtype` is deprecated! Use `dtype` instead!
+torch 2.8.0
+transformers 4.57.1
+accelerate 1.11.0
+# of gpus:  1
+Disentangle: True
+loading llm model llama3.1-nemoguard-8b
+Fetching 4 files:   0%|          | 0/4 [00:00<?, ?it/s]Cancellation requested; stopping current tasks.
+Fetching 4 files:   0%|          | 0/4 [04:59<?, ?it/s]
+Traceback (most recent call last):
+  File "/home/oligo/Documents/Personal Repositories/alignmentAttributionCode/main.py", line 648, in <module>
+    main()
+  File "/home/oligo/Documents/Personal Repositories/alignmentAttributionCode/main.py", line 223, in main
+    model = get_llm(args.model, args.cache_dir)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/oligo/Documents/Personal Repositories/alignmentAttributionCode/main.py", line 55, in get_llm
+    model = AutoModelForCausalLM.from_pretrained(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/oligo/miniconda3/envs/prune_llm_py311/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 604, in from_pretrained
+    return model_class.from_pretrained(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/oligo/miniconda3/envs/prune_llm_py311/lib/python3.11/site-packages/transformers/modeling_utils.py", line 277, in _wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/oligo/miniconda3/envs/prune_llm_py311/lib/python3.11/site-packages/transformers/modeling_utils.py", line 4900, in from_pretrained
+    checkpoint_files, sharded_metadata = _get_resolved_checkpoint_files(
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/oligo/miniconda3/envs/prune_llm_py311/lib/python3.11/site-packages/transformers/modeling_utils.py", line 1200, in _get_resolved_checkpoint_files
+    checkpoint_files, sharded_metadata = get_checkpoint_shard_files(
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/oligo/miniconda3/envs/prune_llm_py311/lib/python3.11/site-packages/transformers/utils/hub.py", line 1084, in get_checkpoint_shard_files
+    cached_filenames = cached_files(
+                       ^^^^^^^^^^^^^
+  File "/home/oligo/miniconda3/envs/prune_llm_py311/lib/python3.11/site-packages/transformers/utils/hub.py", line 494, in cached_files
+    snapshot_download(
+  File "/home/oligo/miniconda3/envs/prune_llm_py311/lib/python3.11/site-packages/huggingface_hub/utils/_validators.py", line 114, in _inner_fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/oligo/miniconda3/envs/prune_llm_py311/lib/python3.11/site-packages/huggingface_hub/_snapshot_download.py", line 332, in snapshot_download
+    thread_map(
+  File "/home/oligo/miniconda3/envs/prune_llm_py311/lib/python3.11/site-packages/tqdm/contrib/concurrent.py", line 69, in thread_map
+    return _executor_map(ThreadPoolExecutor, fn, *iterables, **tqdm_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/oligo/miniconda3/envs/prune_llm_py311/lib/python3.11/site-packages/tqdm/contrib/concurrent.py", line 51, in _executor_map
+    return list(tqdm_class(ex.map(fn, *iterables, chunksize=chunksize), **kwargs))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/oligo/miniconda3/envs/prune_llm_py311/lib/python3.11/site-packages/tqdm/std.py", line 1181, in __iter__
+    for obj in iterable:
+  File "/home/oligo/miniconda3/envs/prune_llm_py311/lib/python3.11/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/oligo/miniconda3/envs/prune_llm_py311/lib/python3.11/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/oligo/miniconda3/envs/prune_llm_py311/lib/python3.11/concurrent/futures/_base.py", line 451, in result
+    self._condition.wait(timeout)
+  File "/home/oligo/miniconda3/envs/prune_llm_py311/lib/python3.11/threading.py", line 327, in wait
+    waiter.acquire()
+KeyboardInterrupt

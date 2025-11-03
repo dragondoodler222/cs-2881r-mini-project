@@ -121,6 +121,14 @@ def prepare_calibration_input(model, dataloader, device, nsamples):
             # cache['attention_mask'] = kwargs['attention_mask']
             # cache['position_ids'] = kwargs['position_ids']
             raise ValueError
+        
+        def __getattr__(self, name):
+            # Pass through attribute access to the wrapped module
+            # This handles attributes like 'attention_type' required by newer transformers
+            try:
+                return super().__getattr__(name)
+            except AttributeError:
+                return getattr(self.module, name)
 
     layers[0] = Catcher(layers[0])
     for batch in dataloader:
@@ -297,6 +305,20 @@ def prune_wanda(
     attention_mask = [am.to(device) for am in attention_mask]
     position_ids = [pids.to(device) for pids in position_ids]
 
+    # For Qwen2 in transformers 4.57+, pre-compute position embeddings
+    # This is needed when calling layers individually
+    if hasattr(model.model, 'rotary_emb'):
+        rotary_emb = model.model.rotary_emb
+        model_dtype = next(iter(model.parameters())).dtype
+        # Compute position embeddings for all samples
+        position_embeddings_list = []
+        for pids in position_ids:
+            # Create dummy tensor with correct dtype for rotary embedding computation
+            cos, sin = rotary_emb(torch.ones(1, pids.shape[1], dtype=model_dtype, device=device), pids)
+            position_embeddings_list.append((cos, sin))
+    else:
+        position_embeddings_list = [None] * len(position_ids)
+
     layers = model.model.layers
     if args.use_diff or args.recover_from_base:
         assert model_base is not None
@@ -343,10 +365,12 @@ def prune_wanda(
                 )
 
             with torch.no_grad():
+                # For transformers 4.57+, Qwen2 needs position_embeddings when calling layers directly
                 outs[j] = layer(
                     inps[j].unsqueeze(0),
                     attention_mask=attention_mask[j],
                     position_ids=position_ids[j],
+                    position_embeddings=position_embeddings_list[j],
                 )[0]
 
             for h in handles:
@@ -627,10 +651,12 @@ def prune_wanda(
 
         for j in range(args.nsamples):
             with torch.no_grad():
+                # For transformers 4.57+, Qwen2 needs position_embeddings when calling layers directly
                 outs[j] = layer(
                     inps[j].unsqueeze(0),
                     attention_mask=attention_mask[j],
                     position_ids=position_ids[j],
+                    position_embeddings=position_embeddings_list[j],
                 )[0].squeeze(0)
         inps, outs = outs, inps
 
@@ -762,10 +788,12 @@ def prune_wanda_decouple_activations(
                 )
 
             with torch.no_grad():
+                # For transformers 4.57+, Qwen2 needs position_embeddings when calling layers directly
                 outs[j] = layer(
                     inps[j].unsqueeze(0),
                     attention_mask=attention_mask[j],
                     position_ids=position_ids[j],
+                    position_embeddings=position_embeddings_list[j],
                 )[0]
 
             for h in handles:
@@ -1104,10 +1132,12 @@ def prune_wanda_decouple_activations(
 
         for j in range(args.nsamples):
             with torch.no_grad():
+                # For transformers 4.57+, Qwen2 needs position_embeddings when calling layers directly
                 outs[j] = layer(
                     inps[j].unsqueeze(0),
                     attention_mask=attention_mask[j],
                     position_ids=position_ids[j],
+                    position_embeddings=position_embeddings_list[j],
                 )[0].squeeze(0)
             with torch.no_grad():
                 outs_extra[j] = layer_extra(
@@ -1258,10 +1288,12 @@ def prune_wanda_decouple_activation_norms(
                 )
 
             with torch.no_grad():
+                # For transformers 4.57+, Qwen2 needs position_embeddings when calling layers directly
                 outs[j] = layer(
                     inps[j].unsqueeze(0),
                     attention_mask=attention_mask[j],
                     position_ids=position_ids[j],
+                    position_embeddings=position_embeddings_list[j],
                 )[0]
 
             for h in handles:
@@ -1591,10 +1623,12 @@ def prune_wanda_decouple_activation_norms(
 
         for j in range(args.nsamples):
             with torch.no_grad():
+                # For transformers 4.57+, Qwen2 needs position_embeddings when calling layers directly
                 outs[j] = layer(
                     inps[j].unsqueeze(0),
                     attention_mask=attention_mask[j],
                     position_ids=position_ids[j],
+                    position_embeddings=position_embeddings_list[j],
                 )[0].squeeze(0)
             with torch.no_grad():
                 outs_extra[j] = layer_extra(
@@ -1824,6 +1858,14 @@ def prune_sparsegpt(args, model, tokenizer, dev, prune_n=0, prune_m=0):
             cache["attention_mask"] = kwargs["attention_mask"]
             cache["position_ids"] = kwargs["position_ids"]
             raise ValueError
+        
+        def __getattr__(self, name):
+            # Pass through attribute access to the wrapped module
+            # This handles attributes like 'attention_type' required by newer transformers
+            try:
+                return super().__getattr__(name)
+            except AttributeError:
+                return getattr(self.module, name)
 
     layers[0] = Catcher(layers[0])
     for batch in dataloader:
@@ -1943,6 +1985,14 @@ def prune_ablate(args, model, tokenizer, dev, prune_n=0, prune_m=0):
             cache["attention_mask"] = kwargs["attention_mask"]
             cache["position_ids"] = kwargs["position_ids"]
             raise ValueError
+        
+        def __getattr__(self, name):
+            # Pass through attribute access to the wrapped module
+            # This handles attributes like 'attention_type' required by newer transformers
+            try:
+                return super().__getattr__(name)
+            except AttributeError:
+                return getattr(self.module, name)
 
     layers[0] = Catcher(layers[0])
     for batch in dataloader:

@@ -527,8 +527,8 @@ if __name__ == "__main__":
 
     sanity_check = True
     modeltype2path = {
-        "llama2-7b-hf": "",
-        "llama2-7b-chat-hf": "",
+        "llama2-7b-hf": "./models/llama2-7b-hf",
+        "llama2-7b-chat-hf": "./models/llama2-7b-chat-hf",
     }
 
     def get_llm(model_name, cache_dir="llm_weights"):
@@ -540,7 +540,11 @@ if __name__ == "__main__":
             device_map="cuda",
         )
 
-        model.seqlen = model.config.max_position_embeddings
+        # Set sequence length, capping at 4096 for memory efficiency
+        # Models with very large context windows (like Qwen's 131k) can cause OOM
+        # Original seq length code:
+        # model.seqlen = model.config.max_position_embeddings
+        model.seqlen = min(model.config.max_position_embeddings, 4096)
         return model
 
     tokenizer = AutoTokenizer.from_pretrained(modeltype2path["llama2-7b-hf"])

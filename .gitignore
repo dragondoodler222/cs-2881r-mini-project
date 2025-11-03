@@ -1,2 +1,11 @@
 .DS_Store
 lib/__pycache__
+__pycache__/
+ExcessMDs/
+models/
+out_test/
+test/
+vllm_constraints.txt
+llm_weights/
+verify_eval_fix.py
+temp/

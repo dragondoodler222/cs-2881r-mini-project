@@ -18,10 +18,13 @@ SAVE_PATH = './ckpts' # path to save rewinded model temporarily (for VLLM)
 
 modeltype2path = {
     # Fine-tuning related models
-    'llama2-7b-chat': '', # the same as 'llama2-7b-chat-hf'
+    'llama2-7b-chat': './models/llama2-7b-chat-hf', # the same as 'llama2-7b-chat-hf'
     'llama2-7b-chat-ft-pure-bad-10': '',
     'llama2-7b-chat-ft-pure-bad-50': '',
     'llama2-7b-chat-ft-pure-bad-100': '',
+    'llama3.1-8b': './models/llama3.1-8b',
+    'llama3.1-nemoguard-8b': './models/llama3.1-nemoguard-8b',
+    'qwen2_5-7b': './models/qwen2.5-7B',
 }
 
 def get_llm(model_name, cache_dir="llm_weights"):
@@ -33,7 +36,11 @@ def get_llm(model_name, cache_dir="llm_weights"):
         device_map="auto"
     )
 
-    model.seqlen = model.config.max_position_embeddings 
+    # Set sequence length, capping at 4096 for memory efficiency
+    # Models with very large context windows (like Qwen's 131k) can cause OOM
+    # Original seq length code:
+    # model.seqlen = model.config.max_position_embeddings 
+    model.seqlen = min(model.config.max_position_embeddings, 4096)
     return model
 
 def main():
@@ -137,7 +144,18 @@ def main():
         # note: since vLLM only supports loading from the path, we need to save the pruned model first for faster evaluation. We can reuse this temp folder to save disk spaces
         pruned_path = os.path.join(SAVE_PATH, f'tmp.ckpt')   
         model.save_pretrained(pruned_path)
-        vllm_model = LLM(model=pruned_path, tokenizer=modeltype2path[args.model], dtype='bfloat16')
+        
+        # VLLM will share GPU with the existing model, so use conservative memory allocation
+        print(f"Loading model with VLLM from {pruned_path} (model kept in memory)")
+        
+        vllm_model = LLM(
+            model=pruned_path, 
+            tokenizer=modeltype2path[args.model], 
+            dtype='bfloat16',
+            swap_space=4,  # Reduce swap space
+            max_model_len=4096,  # Cap context length
+            gpu_memory_utilization=0.70  # Use 70% to leave room for the original model
+        )
         
         # vllm_model = LLM(model=modeltype2path[args.model], tokenizer=modeltype2path[args.model], dtype='bfloat16')
         # for include_inst in [True, False]:
